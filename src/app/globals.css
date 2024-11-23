@@ -9,7 +9,6 @@
 }
 
 .custom {
-    position: relative;
     overflow-x: hidden;
     background: linear-gradient(160deg, #ffb7b7 9%, #727272),
         radial-gradient(100% 199% at 30% 10%, #ffd1d1 0, #260000 100%),
@@ -34,6 +33,7 @@
     width: 64rem;
     height: 64rem;
     background-image: url('../../public/png/background.png');
+    z-index: -1;
 }
 
 .custom::after {
@@ -48,6 +48,7 @@
     width: 64rem;
     height: 64rem;
     background-image: url('../../public/png/background.png');
+    z-index: -1;
 }
 
 .header__hero--heading-gradient {
@@ -57,6 +58,114 @@
     -webkit-text-fill-color: transparent;
     background-size: 400% 400%;
     animation: gradient 3s ease infinite;
+}
+
+.no-copy {
+    user-select: none; /* Ngăn chọn văn bản */
+    -webkit-user-select: none; /* Dành cho Safari */
+    -moz-user-select: none; /* Dành cho Firefox */
+    -ms-user-select: none; /* Dành cho Internet Explorer/Edge */
+}
+
+.hide-scrollbar {
+    overflow: auto; /* Cho phép cuộn */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+}
+
+.speaker__toggle {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+}
+
+.speaker__unmuted {
+    transform: rotate(180deg);
+
+    .rect1-anim {
+        animation: rect1Anim 1s ease-in-out infinite alternate;
+    }
+
+    .rect2-anim {
+        animation: rect2Anim 1s ease-in-out infinite alternate;
+    }
+
+    .rect3-anim {
+        animation: rect3Anim 1s ease-in-out infinite alternate;
+    }
+
+    .rect4-anim {
+        animation: rect4Anim 1s ease-in-out infinite alternate;
+    }
+}
+
+.speaker__toggle--anim {
+    left: 54%;
+}
+
+@keyframes rect1Anim {
+    0% {
+        height: 5.8px;
+    }
+    50% {
+        height: 8px;
+    }
+    100% {
+        height: 1px;
+    }
+}
+
+@keyframes rect2Anim {
+    0% {
+        height: 5.8px;
+    }
+    50% {
+        height: 6px;
+    }
+    100% {
+        height: 4px;
+    }
+}
+
+@keyframes rect3Anim {
+    0% {
+        height: 5.8px;
+    }
+    50% {
+        height: 4px;
+    }
+    100% {
+        height: 8px;
+    }
+}
+
+@keyframes rect4Anim {
+    0% {
+        height: 5.8px;
+    }
+    50% {
+        height: 1px;
+    }
+    100% {
+        height: 3px;
+    }
 }
 
 @keyframes gradient {
