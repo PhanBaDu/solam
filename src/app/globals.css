@@ -21,12 +21,23 @@
     background-size: cover;
 }
 
+.bg-custom {
+    overflow-x: hidden;
+    background: linear-gradient(160deg, #ffb7b7 9%, #727272),
+        radial-gradient(100% 199% at 30% 10%, #ffd1d1 0, #260000 100%),
+        linear-gradient(180deg, #0ff, #fff),
+        radial-gradient(100% 100% at 70% 0, red 0, #00ffe0 100%),
+        linear-gradient(280deg, #dbff00, #30f);
+    background-blend-mode: screen, overlay, color-burn, color-dodge, normal;
+    background-image: url('../../public/png/blurry.png');
+}
+
 .custom::before {
     content: '';
     display: block;
     position: absolute;
-    top: -15rem;
-    left: -10rem;
+    top: -300px;
+    left: -200px;
     background-repeat: no-repeat;
     background-size: contain;
     transform: rotate(-60deg);
@@ -40,8 +51,8 @@
     content: '';
     display: block;
     position: absolute;
-    bottom: -15rem;
-    right: -10rem;
+    bottom: -300px;
+    right: -200px;
     background-repeat: no-repeat;
     background-size: contain;
     transform: rotate(120deg);
@@ -52,7 +63,13 @@
 }
 
 .header__hero--heading-gradient {
-    background: linear-gradient(-45deg, #6bc5f8, rgb(207, 89, 230), #6bc5f8, rgb(207, 89, 230));
+    background: linear-gradient(
+        -45deg,
+        #6bc5f8,
+        rgb(207, 89, 230),
+        #6bc5f8,
+        rgb(207, 89, 230)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -78,8 +95,21 @@
 }
 
 .glass {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 1)
+    );
     backdrop-filter: blur(10px);
+}
+
+.button {
+    background: linear-gradient(160deg, #ffb7b7 9%, #727272),
+        radial-gradient(100% 199% at 30% 10%, #ffd1d1 0, #260000 100%),
+        linear-gradient(180deg, #0ff, #fff),
+        radial-gradient(100% 100% at 70% 0, red 0, #00ffe0 100%),
+        linear-gradient(280deg, #dbff00, #30f);
+    background-blend-mode: screen, overlay, color-burn, color-dodge, normal;
 }
 
 .speaker__toggle {
